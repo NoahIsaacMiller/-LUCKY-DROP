@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>超级盲盒机</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+SC:wght@400;700;900&family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;800&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+      body {
+        font-family: 'Noto Sans SC', sans-serif;
+        overflow-x: hidden;
+      }
+      .font-anton { font-family: 'Anton', sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+      
+      /* 通用动效 */
+      .brutal-shadow {
+        box-shadow: 4px 4px 0px currentColor;
+        transition: all 0.1s ease;
+      }
+      .brutal-shadow:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px currentColor;
+      }
+
+      .neon-shadow {
+        box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+      }
+
+      /* 滚动文字动画 */
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-marquee {
+        animation: marquee 20s linear infinite;
+      }
+
+      /* 噪点背景 */
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

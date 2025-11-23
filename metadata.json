@@ -1,0 +1,5 @@
+{
+  "name": "超级盲盒机 // LUCKY DROP",
+  "description": "一个支持多风格切换（波普/赛博）、具备管理后台的智能盲盒抽奖系统。集成 Gemini AI 进行中文互动点评。",
+  "requestFramePermissions": []
+}
